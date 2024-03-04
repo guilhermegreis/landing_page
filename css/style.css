@@ -1,16 +1,126 @@
+:root {
+    --color-primary: #888888;
+    --color-secondary: #707070;
+
+    --font-primary: normal normal normal 20px/24px Helvetica Neue;
+}
+
 *{
     padding: 0;
     margin: 0;
 }
 
-.top {
+body {
+    color: white;
+}
+
+.home .header {
 top: 0px;
 right: 100px;
 width: 100%;
 height: 399px;
 
-background: #707070 0% 0% no-repeat padding-box;
-border: 1px solid #707070;
+background: var(--color-secondary) 0% 0% no-repeat padding-box;
+border: 1px solid var(--color-secondary);
 opacity: 1;
-clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 50px));
+clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
+}
+
+.home .header p {
+    font-size: 20px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+
+    margin-bottom: 0;
+    padding: 0;
+}
+
+.home .header h2 {
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+.home .header .p2 {
+    padding: 0;
+    margin-top: 30px;
+}
+
+.home .header .nav {
+    display: flex;
+    justify-content: center;
+}
+
+.home .header .nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+.home .header .nav ul li {
+    text-decoration: none;
+    padding: 10px;
+    margin: 40px 30px; /* Aumenta o espaçamento horizontal entre os itens */
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    opacity: 1;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 6px #00000029;
+}
+
+.home .header .nav ul li a {
+    text-decoration: none;
+    color: var(--color-primary);
+    font: var(--font-primary);
+}
+
+.help .container {
+    display: flex;
+    color: var(--color-primary);
+}
+
+.help .container .timing {
+    width: 100%;
+}
+
+.help .container .timing .overlay {
+    color: var(--color-primary);
+    font: var(--font-primary);
+
+    margin-top: 100px;
+    margin-left: 500px; /* Ajuste conforme necessário para alinhar à direita */
+    width: 750px; /* Mantive este valor, mas ajuste conforme necessário */
+}
+
+.help .container .timing .data {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -350px;
+    margin-right: 500px;
+
+   color: var(--color-primary);
+   font: var(--font-primary);
+}
+
+.help .container .timing .data .necs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.help .container .timing .data .necs input {
+    top: 441px;
+    left: 870px;
+    width: 340px;
+    height: 30px;
+
+    
+    margin-right: -150px;
+}
+
+.help .container .timing .data .necs .sex {
+    height: 15px;
+    margin-left: -30px;
 }

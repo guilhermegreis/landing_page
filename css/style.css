@@ -63,7 +63,7 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     text-decoration: none;
 
     padding: 10px;
-    margin: 40px 30px; /* Aumenta o espaçamento horizontal entre os itens */
+    margin: 40px 30px; 
 
     border: 1px solid var(--color-secondary);
     border-radius: 4px;
@@ -94,8 +94,8 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     font: var(--font-primary);
 
     margin-top: 100px;
-    margin-left: 500px; /* Ajuste conforme necessário para alinhar à direita */
-    width: 750px; /* Mantive este valor, mas ajuste conforme necessário */
+    margin-left: 500px; 
+    width: 750px;
 }
 
 .data {
@@ -148,3 +148,69 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     width: 100%;
     height: 40px;
 }
+
+.special_text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 110px;
+    position: relative; /* Adicionado para definir o contexto */
+}
+
+.special_text .texts h2 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+
+    color: var(--color-primary);
+
+    margin: auto;
+}
+
+.special_text .texts h2::before,
+.special_text .texts h2::after {
+    content: '';
+    position: absolute;
+    height: 1px;
+    background-color: var(--color-secondary);
+    top: 50%;
+    width: 30%; 
+}
+
+.special_text .texts h2::before {
+    right: calc(100% + 20px); 
+    transform: translateY(-50%);
+}
+
+.special_text .texts h2::after {
+    left: calc(100% + 20px); 
+    transform: translateY(-50%);
+}
+
+.select_box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 0 auto; 
+    padding-top: 50px;
+}
+
+.select_box .boxes {
+    display: grid; /* usando display grid pela primeira vez na vida */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    margin: 0 auto; 
+}
+
+.select_box .box {
+    border: 1px solid var(--color-primary);
+    height: 150px; /* altura das caixas */
+    padding: 70px; /* espaçamento interno das caixas */
+    box-sizing: border-box; /* garante que a largura definida inclua a borda e o preenchimento */
+}
+
+
+
+
+

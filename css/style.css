@@ -154,7 +154,7 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     justify-content: center;
     align-items: center;
     padding-top: 110px;
-    position: relative; /* Adicionado para definir o contexto */
+    position: relative; 
 }
 
 .special_text .texts h2 {
@@ -205,12 +205,108 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
 
 .select_box .box {
     border: 1px solid var(--color-primary);
-    height: 150px; /* altura das caixas */
-    padding: 70px; /* espaçamento interno das caixas */
-    box-sizing: border-box; /* garante que a largura definida inclua a borda e o preenchimento */
+    height: 150px; 
+    padding: 70px; 
+    box-sizing: border-box;
+}
+
+.b_more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding-top: 50px;
+}
+
+.b_more .more{
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid var(--color-secondary);
+    border-radius: 4px;
+    opacity: 1;
+    padding: 10px;
+
+    font: normal normal normal 16px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: var(--color-primary);
+}
+
+.share {
+    text-align: center;
+
+    margin-top: 100px;
+}
+
+.share h2 {
+    position: relative;
+    display: inline-block;
+    color: var(--color-primary);
+    font: normal normal bold 20px/16px Helvetica Neue;
+    margin-bottom: 30px; 
+}
+
+.share h2::before,
+.share h2::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30%; 
+    height: 1px;
+    background-color: var(--color-secondary);
+}
+
+.share h2::before {
+    right: calc(100% + 20px); 
+    transform: translateY(-50%);
+}
+
+.share h2::after {
+    left: calc(100% + 20px); 
+    transform: translateY(-50%);
+}
+
+.share h1 {
+    text-align: center;
+    font: normal normal normal 14px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #888888;
 }
 
 
+.share .share_friend .input_share {
+    display: inline-block;
+    margin-right: 30px;
+    vertical-align: top;
 
+    color: var(--color-primary);
+    text-align: left;
+    font: normal normal normal 15px Helvetica Neue;
+    opacity: 1;
+}
 
+.share .share_friend .input_share label {
+    display: block;
+    margin-bottom: 5px;
+}
 
+.share .share_friend .input_share input {
+    width: 400px;
+    height: 25px;
+}
+
+.share .share_friend .send2 {
+    align-content: center;
+
+    text-align: center;
+    font: normal normal normal 16px/16px Helvetica Neue;
+    letter-spacing: 0px;
+    color: #888888;
+    opacity: 1;
+
+    padding: 10px;
+    width: 200px;
+
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #707070;
+    border-radius: 4px;
+    opacity: 1;
+}

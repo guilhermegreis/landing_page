@@ -3,52 +3,57 @@ let form = document.querySelector('#signup')
 form.onsubmit = function(evento){
     evento.preventDefault()
 
-    let input_nome = document.forms['signup']['name']
+    validate_input('name', 'Digite o nome corretamente');
+    validate_input('email', 'Digite o email corretamente');
+    validate_input('number', 'Digite o CPF corretamente');
+    validate_input('sex', 'Selecione o seu sexo');
+};
 
-    if(!input_nome.value){
-        input_nome.classList.add('input_error')
+function validate_input(input_name, error_message) {
+    let input = document.forms['signup'][input_name];
+    let span = input.closest('.input_wrapper').querySelector('.error-message');
 
-        let span = input_nome.nextSibling.nextSibling
-        span.innerText = 'Digite o nome corretamente'
+    if(!input.value) {
+        input.classList.add('input_error');
+        span.innerText = error_message;
     } else {
-        input_nome.classList.remove('input_error')
-        let span = input_nome.nextSibling.nextSibling
-        span.innerText = ''
+        input.classList.remove('input_error');
+        span.innerText = '';
     }
+}
 
-    let input_email = document.forms['signup']['email']
+function validate_select(input_name, error_message) {
+    let select = document.forms['signup'][input_name];
+    let span = select.closest('.input_wrapper').querySelector('.error-message');
 
-    if(!input_email.value){
-    input_email.classList.add('input_error')
-
-    let span = input_email.nextSibling.nextSibling
-    span.innerText = 'Digite o email corretamente'
+    if(!select.value) {
+        select.classList.add('input_error');
+        span.innerText = error_message;
     } else {
-        input_email.classList.remove('input_error')
-        let span = input_email.nextSibling.nextSibling
-        span.innerText = ''
+        select.classList.remove('input_error');
+        span.innerText = '';
     }
+};
 
-    let input_number = document.forms['signup']['number']
+let form2 = document.querySelector('#form_share')
 
-    if(!input_number.value){
-        input_number.classList.add('input_error')
+form2.onsubmit = function(evento){
+    evento.preventDefault()
 
-    let span = input_number.nextSibling.nextSibling
-    span.innerText = 'Digite o CPF corretamente'
+    validate_input2('name', 'Digite o nome corretamente');
+    validate_input2('email', 'Digite o email corretamente');
+};
+
+function validate_input2(input_name, error_message) {
+    let input = document.forms['form_share'][input_name];
+    let span = input.closest('.input_share').querySelector('.error-message');
+
+    if(!input.value) {
+        input.classList.add('input_error');
+        span.innerText = error_message;
     } else {
-        input_number.classList.remove('input_error')
-        let span = input_number.nextSibling.nextSibling
-        span.innerText = ''
-    }
-
-    let input_sex = document.forms['signup']['radio']
-
-    if(!input_sex.value){
-        input_sex.classList.add('input_error')
-
-    let span = input_sex.nextSibling.nextSibling
-    span.innerText = 'Selecione o seu sexo'
+        input.classList.remove('input_error');
+        span.innerText = '';
     }
 }
 

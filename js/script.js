@@ -61,7 +61,7 @@ let current_page = 1;
 async function carregar_produtos() {
     try {
         current_page++;
-        const response = await fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${currentPage}')
+        const response = await fetch(`https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${current_page}`)
         const data = await response.json();
 
         const boxes = document.querySelectorAll('.box');
@@ -71,15 +71,23 @@ async function carregar_produtos() {
             if(product) {
                 const {name, image, description, oldPrice, price, installments} = product;
 
+                const product_name = `Produto Número ${index + 1}`;
+                const product_description = "Descrição do Produto";
+                const installmentCount = installments.count;
+                const installmentValue = installments.value;
+                const installment_text = `ou ${installmentCount}x de R$ ${installmentValue}`;
+
+
                     const productHTML = `
                         <div class="product">
                             <img src="${image}" alt="${name}" class="product_image">
-                            <h3 class="product_name">${name}</h3>
-                            <p class="product_description">${description}</p>
+                            <h3 class="productName">${product_name}</h3>
+                            <p class="productDescription">${product_description}</p>
                             <div class="product_price">
                                 <span class="old_price">De: ${oldPrice}</span><br>
                                 <span class="price">Por: ${price}</span>
-                                <span class="installments">ou ${installments}</span>
+                                <span class="installments">${installment_text}</span><br><br>
+                                <button class="buy_button">Comprar</button>
                             </div>
                         </div>
                     `;

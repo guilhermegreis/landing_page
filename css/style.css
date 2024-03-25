@@ -211,29 +211,23 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     position: relative;
 
     width: 150px;
-    height: auto;
+    height: 100px;
     max-width: 100%;
 
-    display: block;
     display: block;
     margin: 0 auto;
 }
 
 
 .select_box  .box .product_details {
-    text-align: center;
-    padding: 10px;
     display: flex;
     justify-content: center;
+    text-align: center;
+    flex-direction: column;
+
+    padding: 10px;
     color: var(--color-primary);
 }
-
-.select_box  .box .product_details .buy_button{
-    color: var(--color-primary);
-
-    border: 1px solid black;
-}
-
 
 .b_more {
     display: flex;
@@ -371,8 +365,8 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
 }
 
 .product_imagem {
-    width: 1px;
-    height: 1px;
+    width: 10px;
+    height: 10px;
 }
 
 .product {
@@ -380,3 +374,14 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     text-align: center;
 }
 
+.buy_button {
+    background-color: white;
+    color: var(--color-primary);
+    border: 1px solid black;
+    width: 150px;
+    display: block;
+    margin: 10px auto;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}

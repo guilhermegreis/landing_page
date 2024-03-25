@@ -194,22 +194,46 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
     align-items: center;
     flex-wrap: wrap;
     margin: 0 auto; 
-    padding-top: 50px;
+    padding-top: 50px;  
 }
 
-.select_box .boxes {
-    display: grid; /* usando display grid pela primeira vez na vida */
+.select_box  {
+    display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 50px;
     margin: 0 auto; 
 }
 
-.select_box .box {
+.select_box  .box img {
     border: 1px solid var(--color-primary);
-    height: 150px; 
-    padding: 70px; 
     box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+    width: 150px;
+    height: auto;
+    max-width: 100%;
+
+    display: block;
+    display: block;
+    margin: 0 auto;
 }
+
+
+.select_box  .box .product_details {
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    color: var(--color-primary);
+}
+
+.select_box  .box .product_details .buy_button{
+    color: var(--color-primary);
+
+    border: 1px solid black;
+}
+
 
 .b_more {
     display: flex;
@@ -345,3 +369,14 @@ clip-path: polygon(0 0,100% 0,100% 100%,0 calc(80% - 90px));
 .error-message {
     color: red;
 }
+
+.product_imagem {
+    width: 1px;
+    height: 1px;
+}
+
+.product {
+    color: var(--color-primary);
+    text-align: center;
+}
+

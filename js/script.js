@@ -56,13 +56,12 @@ function validate_input2(input_name, error_message) {
         span.innerText = '';
     }
 }
-
 let current_page = 1;
 
 async function carregar_produtos() {
     try {
         current_page++;
-        const response = await fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1')
+        const response = await fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=${currentPage}')
         const data = await response.json();
 
         const boxes = document.querySelectorAll('.box');
@@ -74,13 +73,13 @@ async function carregar_produtos() {
 
                     const productHTML = `
                         <div class="product">
-                            <img src="${image}" alt="${name}" class="product-image">
+                            <img src="${image}" alt="${name}" class="product_image">
                             <h3 class="product_name">${name}</h3>
                             <p class="product_description">${description}</p>
                             <div class="product_price">
-                                <span class="old_price">${oldPrice}</span>
-                                <span class="price">${price}</span>
-                                <span class="installments">${installments}</span>
+                                <span class="old_price">De: ${oldPrice}</span><br>
+                                <span class="price">Por: ${price}</span>
+                                <span class="installments">ou ${installments}</span>
                             </div>
                         </div>
                     `;
@@ -91,6 +90,6 @@ async function carregar_produtos() {
         console.error('Ocorreu um erro ao carregar os produtos:', error);
     }
 }
-
+document.addEventListener('DOMContentLoaded', carregar_produtos);
 const mais_produtos = document.querySelector('.more');
 mais_produtos.addEventListener('click', carregar_produtos);

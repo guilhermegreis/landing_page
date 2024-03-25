@@ -57,3 +57,40 @@ function validate_input2(input_name, error_message) {
     }
 }
 
+let current_page = 1;
+
+async function carregar_produtos() {
+    try {
+        current_page++;
+        const response = await fetch('https://frontend-intern-challenge-api.iurykrieger.vercel.app/products?page=1')
+        const data = await response.json();
+
+        const boxes = document.querySelectorAll('.box');
+
+        boxes.forEach((box, index) => {
+            const product = data.products[index];
+            if(product) {
+                const {name, image, description, oldPrice, price, installments} = product;
+
+                    const productHTML = `
+                        <div class="product">
+                            <img src="${image}" alt="${name}" class="product-image">
+                            <h3 class="product_name">${name}</h3>
+                            <p class="product_description">${description}</p>
+                            <div class="product_price">
+                                <span class="old_price">${oldPrice}</span>
+                                <span class="price">${price}</span>
+                                <span class="installments">${installments}</span>
+                            </div>
+                        </div>
+                    `;
+                    box.innerHTML = productHTML;
+            }
+        });
+    } catch (error) {
+        console.error('Ocorreu um erro ao carregar os produtos:', error);
+    }
+}
+
+const mais_produtos = document.querySelector('.more');
+mais_produtos.addEventListener('click', carregar_produtos);

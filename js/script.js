@@ -56,7 +56,7 @@ function validate_input2(input_name, error_message) {
         span.innerText = '';
     }
 }
-let current_page = 1;
+let current_page = 0;
 
 async function carregar_produtos() {
     try {
